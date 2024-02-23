@@ -87,6 +87,7 @@ local plugin_specs = {
   {
     "smoka7/hop.nvim",
     event = "VeryLazy",
+    enabled = false,
     config = function()
       require("config.nvim_hop")
     end,
@@ -279,7 +280,7 @@ local plugin_specs = {
   -- 'mg979/vim-visual-multi'
 
   -- Autosave files on certain events
-  { "907th/vim-auto-save", event = "InsertEnter" },
+  { "907th/vim-auto-save", event = "InsertEnter", enabled = false },
 
   -- Show undo history visually
   { "simnalamburt/vim-mundo", cmd = { "MundoToggle", "MundoShow" } },
@@ -506,6 +507,7 @@ local plugin_specs = {
   {
     "gelguy/wilder.nvim",
     build = ":UpdateRemotePlugins",
+    enabled = true,
   },
 
   -- showing keybindings
