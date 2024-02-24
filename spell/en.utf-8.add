@@ -470,3 +470,5 @@ qpdf
 Elasticsearch
 kibana
 submodule
+rustanalyzer
+rust

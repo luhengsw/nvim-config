@@ -43,6 +43,14 @@ keymap.set("n", [[\x]], "<cmd>windo lclose <bar> cclose <cr>", {
   desc = "close qf and location list",
 })
 
+-- Delete all buffer, but keep only this see https://stackoverflow.com/questions/4545275/vim-close-all-buffers-but-this-one
+-- %bd|e#|bd# to remove [No Name] buffer
+-- because %bd means close all buf(but no name buf will exist), e# means open last buffer for editing, bd# means close last buf
+keymap.set("n", [[\o]], "<cmd>%bdelete <bar> e# <bar> bdelete#<cr>", {
+  silent = true,
+  desc = "delete buffer",
+})
+
 -- Delete a buffer, without closing the window, see https://stackoverflow.com/q/4465095/6064933
 keymap.set("n", [[\d]], "<cmd>bprevious <bar> bdelete #<cr>", {
   silent = true,

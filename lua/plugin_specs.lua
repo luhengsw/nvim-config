@@ -39,6 +39,15 @@ local plugin_specs = {
       require("config.nvim-cmp")
     end,
   },
+
+  -- rustacea nvim used for rust analyzer
+  {
+    'mrcjkb/rustaceanvim',
+    version = '^4', -- Recommended
+    ft = { 'rust' },
+    enabled = true,
+  },
+
   {
     "neovim/nvim-lspconfig",
     event = { "BufRead", "BufNewFile" },

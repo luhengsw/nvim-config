@@ -165,6 +165,18 @@ else
   vim.notify("pylsp not found!", vim.log.levels.WARN, { title = "Nvim-config" })
 end
 
+if utils.executable('rust-analyzer') then
+  lspconfig.rust_analyzer.setup {
+    on_attach = custom_attach,
+    capabilities = capabilities,
+    settings = {
+      ['rust-analyzer'] = {},
+    },
+  }
+else
+  vim.notify("Rust Analyzer is not installed", vim.log.levels.WARN, { title = "Nvim-config" })
+end
+
 -- if utils.executable('pyright') then
 --   lspconfig.pyright.setup{
 --     on_attach = custom_attach,
