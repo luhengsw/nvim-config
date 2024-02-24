@@ -467,3 +467,5 @@ pylintrc
 PYTHONPATH
 Uvicorn
 qpdf
+rustanalyzer
+rust
