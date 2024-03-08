@@ -48,6 +48,17 @@ local plugin_specs = {
     enabled = true,
   },
 
+  -- githu nvim support
+  {
+    'github/copilot.vim',
+    version = '*',
+    enabled = true,
+    config = function()
+      vim.g.copilot_proxy = 'http://10.130.8.253:1080'
+    end,
+  },
+
+
   {
     "neovim/nvim-lspconfig",
     event = { "BufRead", "BufNewFile" },
