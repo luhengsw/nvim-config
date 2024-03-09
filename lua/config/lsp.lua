@@ -166,13 +166,37 @@ else
 end
 
 if utils.executable('rust-analyzer') then
-  lspconfig.rust_analyzer.setup {
+vim.g.rustaceanvim = {
+  -- Plugin configuration
+  tools = {
+  },
+  -- LSP configuration
+  server = {
     on_attach = custom_attach,
-    capabilities = capabilities,
-    settings = {
-      ['rust-analyzer'] = {},
+    --on_attach = function(client, bufnr)
+    --  -- you can also put keymaps in here
+    --end,
+    default_settings = {
+      -- rust-analyzer language server configuration
+      ['rust-analyzer'] = {
+        compltion = {
+          addCallArgumentSnippets = false,
+          addCallParenthesis = false,
+        },
+      },
     },
-  }
+  },
+  -- DAP configuration
+  dap = {
+  },
+}
+  --lspconfig.rust_analyzer.setup {
+  --  on_attach = custom_attach,
+  --  capabilities = capabilities,
+  --  settings = {
+  --    ['rust-analyzer'] = {},
+  --  },
+  --}
 else
   vim.notify("Rust Analyzer is not installed", vim.log.levels.WARN, { title = "Nvim-config" })
 end
