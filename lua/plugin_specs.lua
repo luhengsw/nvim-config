@@ -43,6 +43,7 @@ local plugin_specs = {
   {
     'mrcjkb/rustaceanvim',
     version = '^4', -- Recommended
+    dependencies = "nvim-treesitter/nvim-treesitter",
     ft = { 'rust' },
     enabled = true,
   },
@@ -72,7 +73,8 @@ local plugin_specs = {
       if vim.g.is_mac then
         return true
       end
-      return false
+      -- return false
+      return true
     end,
     event = "VeryLazy",
     build = ":TSUpdate",
