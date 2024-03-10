@@ -166,30 +166,30 @@ else
 end
 
 if utils.executable('rust-analyzer') then
-vim.g.rustaceanvim = {
-  -- Plugin configuration
-  tools = {
-  },
-  -- LSP configuration
-  server = {
-    on_attach = custom_attach,
-    --on_attach = function(client, bufnr)
-    --  -- you can also put keymaps in here
-    --end,
-    default_settings = {
-      -- rust-analyzer language server configuration
-      ['rust-analyzer'] = {
-        compltion = {
-          addCallArgumentSnippets = false,
-          addCallParenthesis = false,
+  vim.g.rustaceanvim = {
+    -- Plugin configuration
+    tools = {
+    },
+    -- LSP configuration
+    server = {
+      on_attach = custom_attach,
+      --on_attach = function(client, bufnr)
+      --  -- you can also put keymaps in here
+      --end,
+      default_settings = {
+        -- rust-analyzer language server configuration
+        ['rust-analyzer'] = {
+          compltion = {
+            addCallArgumentSnippets = false,
+            addCallParenthesis = false,
+          },
         },
       },
     },
-  },
-  -- DAP configuration
-  dap = {
-  },
-}
+    -- DAP configuration
+    dap = {
+    },
+  }
   --lspconfig.rust_analyzer.setup {
   --  on_attach = custom_attach,
   --  capabilities = capabilities,
@@ -273,10 +273,14 @@ if utils.executable("lua-language-server") then
 end
 
 -- Change diagnostic signs.
-fn.sign_define("DiagnosticSignError", { text = '🆇', texthl = "DiagnosticSignError" })
-fn.sign_define("DiagnosticSignWarn", { text = '⚠️', texthl = "DiagnosticSignWarn" })
-fn.sign_define("DiagnosticSignInfo", { text = 'ℹ️', texthl = "DiagnosticSignInfo" })
-fn.sign_define("DiagnosticSignHint", { text = '', texthl = "DiagnosticSignHint" })
+-- fn.sign_define("DiagnosticSignError", { text = '🆇', texthl = "DiagnosticSignError" })
+-- fn.sign_define("DiagnosticSignWarn", { text = '⚠️', texthl = "DiagnosticSignWarn" })
+-- fn.sign_define("DiagnosticSignInfo", { text = 'ℹ️', texthl = "DiagnosticSignInfo" })
+-- fn.sign_define("DiagnosticSignHint", { text = '', texthl = "DiagnosticSignHint" })
+fn.sign_define("DiagnosticSignError", { text = '✗', texthl = "DiagnosticSignError" })
+fn.sign_define("DiagnosticSignWarn", { text = '⚠', texthl = "DiagnosticSignWarn" })
+fn.sign_define("DiagnosticSignInfo", { text = 'ℹ', texthl = "DiagnosticSignInfo" })
+fn.sign_define("DiagnosticSignHint", { text = '💡', texthl = "DiagnosticSignHint" })
 
 -- global config for diagnostic
 diagnostic.config {
