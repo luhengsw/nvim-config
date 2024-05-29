@@ -435,7 +435,7 @@ local plugin_specs = {
   { "wellle/targets.vim", event = "VeryLazy" },
 
   -- Plugin to manipulate character pairs quickly
-  { "machakann/vim-sandwich", event = "VeryLazy" },
+  { "machakann/vim-sandwich", event = "VeryLazy", enabled = false},
 
   -- Add indent object for vim (useful for languages like Python)
   { "michaeljsmith/vim-indent-object", event = "VeryLazy" },
