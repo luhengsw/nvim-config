@@ -40,6 +40,19 @@ local plugin_specs = {
     end,
   },
 
+  --golang support
+  {
+    'fatih/vim-go',
+    version = '*',
+    ft = { 'go' },
+    config = function()
+      -- vim.g.go_fmt_command = "goimports"
+      -- vim.g.go_auto_type_info = 1
+      -- vim.g.go_auto_sameids = 1
+      -- vim.g.go_auto_sameids_auto_goroutine = 1
+    end
+  },
+
   -- rustacea nvim used for rust analyzer
   {
     'mrcjkb/rustaceanvim',
