@@ -184,7 +184,7 @@ if utils.executable('gopls') then
         staticcheck = true,
       },
     },
-    on_attach = on_attach,
+    on_attach = custom_attach,
   }
 
   -- use go-vim instead
