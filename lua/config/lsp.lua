@@ -165,6 +165,18 @@ else
   vim.notify("pylsp not found!", vim.log.levels.WARN, { title = "Nvim-config" })
 end
 
+-- typescript / javascript support
+if utils.executable('tsserver') then
+
+  lspconfig.tsserver.setup {
+    on_attach = custom_attach,
+    capabilities = capabilities,
+    --filetypes = { "js", "ts" },
+    flags = {
+    },
+  }
+end
+
 -- Golang support
 if utils.executable('gopls') then
   local capabilities = vim.lsp.protocol.make_client_capabilities()
